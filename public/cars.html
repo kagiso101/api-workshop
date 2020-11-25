@@ -25,15 +25,42 @@
 		<li>{{this}}</li>
 		{{/each}}
 	</script>
+	<script type="text/x-script" class="">
+
+	
+</script>
+
 	<script type="text/x-script" class="carsHandlebar">
-		{{#each cars}}
-		<li>{{this.make}}</li>
-		{{/each}}
-	</script>
+
+
+		<table>
+			<thead>
+			<th>Brand</th>
+			<th>Model</th>
+			<th>Color</th>
+			<th>Registrations</th>
+			<th>Price</th>
+			{{#each cars}}
+			
+			<tr>
+		
+				<td>{{this.make}}</td>
+				<td>{{this.model}}</td>
+				<td>{{this.color}}</td>
+				<td>{{this.reg_number}}</td>
+	  <td>{{this.price}}</td>
+	</tr>
+	
+	{{/each}}
+	
+</thead>
+</table>
+</script>
 </head>
 
 
 <body>
+	
 
 	<h1>Car info</h1>
 
@@ -55,6 +82,9 @@
 	<div class="cars">
 		<ul class="carsList"></ul>
 	</div>
+
+	<h2></h2>
+
 </body>
 <script src="cars.js"></script>
 

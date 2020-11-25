@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Filter widget</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
 
+
+	<script type="text/x-script" class="colorDropDown">
+		<option value="">Select A Color</option>
+	{{#each colorDrop}}
+	   <option value={{this}}>{{this}}</option>
+		{{/each}}
+	</script>
+	<script type="text/x-script" class="brandsDropDown">
+		<option value="">Select A Brand</option>
+	{{#each brandsDrop}}
+	   <option value={{this}}>{{this}}</option>
+		{{/each}}
+	</script>
+	<script type="text/x-script" class="filteredHandlebar">
+
+
+	<table>
+		<thead>
+		<th>Model</th>
+		<th>Registrations</th>
+		<th>Price</th>
+		<th>Color</th>
+
+		{{#each filtered}}
+		<tr>
+			<td>{{this.make}}</td>
+			<td>{{this.reg_number}}</td>
+		<td>{{this.price}}</td>
+		<td>{{this.color}}</td>
+
+        </tr>
+        {{/each}}
+
+        </thead>
+    </table>
+</script>
 </head>
+
 <body>
 	<h1>Filter widget</h1>
+	<div class="cont">
+		<div class="colorsDrop">
+			<select class="colorsDropList"></select>
+		</div>
+
+		<div class="brandsDrop">
+			<select class="brandsDropList"></select>
+		</div>
+		<button class="btn">filter</button>
+		
+	</div>
+	<div class="filtered">
+		<ul class="filteredList"></ul>
+	</div>
 </body>
+<script src="filters.js"></script>
+
 </html>
+
+<!-- colorsDropList -->
